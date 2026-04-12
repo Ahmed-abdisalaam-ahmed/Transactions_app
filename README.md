@@ -128,3 +128,30 @@ Ahmed Abdisalaam
 
 - Make sure MongoDB Atlas is connected
 - Keep your `.env` file private
+
+
+## 📸 API Screenshots
+
+### 📝 Register User
+![Register User](./images/register-user.png)
+
+### 🔐 Login User
+![Login User](./images/login-user.png)
+
+### ➕ Create Transaction
+![Create Transaction](./images/create-transaction.png)
+
+### ✏️ Update Transaction
+![Update Transaction](./images/update-transaction.png)
+
+### ❌ Delete Transaction
+![Delete Transaction](./images/delete-transaction.png)
+
+### 📊 Get All Transactions
+![Get Transactions](./images/get-transactions.png)
+
+### 📈 Summary
+![Summary](./images/summary.png)
+
+### 🗄️ MongoDB Data
+![MongoDB](./images/mongodb.png)

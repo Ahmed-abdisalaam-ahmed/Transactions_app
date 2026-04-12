@@ -13,7 +13,7 @@ const options = {
     },
     servers: [
       {
-        url: process.env.NODE_ENV == "development"? 'http://localhost:5000' : "https://node-js-5dst.onrender.com"
+        url: process.env.NODE_ENV == "development"? 'http://localhost:5000' : "https://transactions-app-ecp9.onrender.com"
       }
     ],
     components: {

@@ -34,25 +34,24 @@ app.use(cors(
 if(process.env.NODE_ENV == "development"){
     app.use(morgan('dev'))
 }
-// swaager
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
-// 
 app.use(helmet())
-// custom middleware
-app.use(logger)
+
 // limits REquest
 app.use(limiter)
+
+// swaager
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 // Routes middleware
-app.use('/auth', authRoutes)
-app.use('/admin', adminRoutes)
-app.use('/transactions', transactionRouter)
-app.use('/upload', uploadRoutes)
+app.use('/api/auth', authRoutes)
+app.use('/api/admin', adminRoutes)
+app.use('/api/transactions', transactionRouter)
+app.use('/api/upload', uploadRoutes)
 
 // Read 
 // Corrected:
-app.get('/', (req, res) => { 
-    res.json("API is Running")
+app.get('/api/health', (req, res) => { 
+    res.json("API is Running.... 🏃🏽‍➡️🏃🏽‍➡️🏃🏽‍➡️")
 })
 
 // error midddleware 
@@ -75,7 +74,7 @@ mongoose.connect(connectionString)
     .then(() => {
         console.log("✅ MongoDB Connected Successfully");
         app.listen(PORT, () => {
-            console.log(`🚀 Server is Running on Port: ${PORT}`);
+            console.log(`🚀 Server is Running on Port: http://localhost:${PORT}`);
         });
     })
     .catch((err) => {

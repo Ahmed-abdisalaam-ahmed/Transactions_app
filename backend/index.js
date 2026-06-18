@@ -28,18 +28,18 @@ app.use(express.json())
 
 app.use(cors(
     {
-        origin: ["dugsiiye.com", "shihabi.com"]
+        origin: ["http://localhost:5000", "http://localhost:5173"]
     }
 ))
 if(process.env.NODE_ENV == "development"){
     app.use(morgan('dev'))
 }
 app.use(helmet())
-
+ 
 // limits REquest
 app.use(limiter)
 
-// swaager
+// swagger
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Routes middleware

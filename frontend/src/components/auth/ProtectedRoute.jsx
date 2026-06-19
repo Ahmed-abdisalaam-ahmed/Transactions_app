@@ -21,6 +21,14 @@ const ProtectedRoute = ({ children }) => {
         retry: 1
     })
 
+    console.log({
+    user,
+    token,
+    isLoading,
+    isSuccess,
+    isError,
+    data
+});
     // Error case 
     useEffect(()=> {
 

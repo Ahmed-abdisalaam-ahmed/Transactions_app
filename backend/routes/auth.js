@@ -72,12 +72,9 @@ router.post('/login', login)
  *       200:
  *         description: Current user info
  */
-router.get('/protect', protect, validate(createUserschema), (req, res) => {
+router.get('/protect', protect, (req, res) => {
     console.log("req.user",req.user)
-    res.json({ 
-        message: "Access Granted",
-        user: req.user 
-    });
+    res.json(req.user);
 })
 
 export default router;

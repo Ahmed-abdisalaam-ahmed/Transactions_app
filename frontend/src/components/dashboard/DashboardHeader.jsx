@@ -29,7 +29,7 @@ const DashboardHeader = () => {
             <BadgeDollarSign className='h-4 w-4 text-primary-foreground'/>
           </div>
           <h1 className=' text-xl font-semibold text-foreground'>
-            Transaction Dashboard
+            FinTrack Dashboard
           </h1>
         </div>
 

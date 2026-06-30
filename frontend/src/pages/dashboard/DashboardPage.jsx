@@ -1,8 +1,8 @@
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
 import DashboardWelcome from "@/components/dashboard/DashboardWelcome";
 import SideBar from "@/components/dashboard/SideBar";
-import TransactionForm from "@/components/transations/TransactionForm";
-import TransactionList from "@/components/transations/TransactionList";
+import TransactionForm from "@/components/transactions/TransactionForm";
+import TransactionList from "@/components/transactions/TransactionList";
 import api from "@/lib/api/apiClient";
 import { useQuery } from "@tanstack/react-query";
 import { Loader } from "lucide-react";
@@ -59,29 +59,24 @@ const DashboardPage = () => {
 
   return (
 
-    <div className="min-h-screen bg-white text-black dark:bg-slate-950 dark:text-white transition-colors duration-300 border border-t rounded">
-      
-      
-      <div className="flex relative">
-        
-        {/* Desktop */}
-        <div className="hidden sm:block min-h-screen p-4 w-64 border-r bg-white dark:bg-slate-900 py-6">
-          <SideBar />
-        </div>
-
-        {/* main Content */}
-        <div className="flex-1 p-4">
-          <h1 className='font-bold text-2xl px-2'>Welcome to Dashboard</h1>
-          <Outlet />
-        </div>
-
-      {/* main content */}
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        <Outlet />
-      </main>
-
+<div className="min-h-screen bg-white text-black dark:bg-slate-950 dark:text-white transition-colors duration-300 border border-t rounded">
+  <DashboardHeader />
+  <div className="flex relative h-screen">
+    
+    {/* Desktop Sidebar */}
+    <div className="hidden sm:block min-h-screen p-4 w-64 border-r bg-white dark:bg-slate-900 py-6">
+      <SideBar />
     </div>
-    </div>
+
+    {/* Main Content */}
+    <main className="flex-1 overflow-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto">
+         <Outlet context={{ transactions: taskQuery.data || [] }} />
+      </div>
+    </main>
+
+  </div>
+</div>
   );
 };
 
